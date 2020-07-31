@@ -1,6 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$primary-color: white;
+$secondary-color: orange;
 
 *, html {
   margin:0 ;
@@ -8,7 +10,7 @@
 }
 
 .top {
-  background-color: coral;
+  background-color: $secondary-color;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("coffee_shop3.jpg");
@@ -30,7 +32,7 @@
 }
 
 .logo-name {
-  color:white;
+  color:$primary-color;
   margin-top: 30px;
   font-size: small;
 }
@@ -43,7 +45,7 @@
   display:flex;
   justify-content: flex-end;
   flex-direction: row;
-  color:white;
+  color:$primary-color;
   margin-right: 100px;
   margin-top:40px;
   margin-left:50%;
@@ -56,7 +58,7 @@
 }
 
 .bullet {
-  background-color:orange;
+  background-color:$secondary-color;
   display:inline-block;
   vertical-align: middle;
   background-size:100%;
@@ -71,7 +73,7 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  color:white;
+  color:$primary-color;
   margin-bottom: 10px;
   margin-top:50px;
 }
@@ -105,11 +107,11 @@
 }
 
 .tiny-line1 {
-  background: linear-gradient(45deg, transparent, transparent 49%, white 49%, transparent 51%);
+  background: linear-gradient(45deg, transparent, transparent 49%, $primary-color 49%, transparent 51%);
 }
 
 .tiny-line2 {
-  background: linear-gradient(-45deg, transparent, transparent 49%, white 49%, transparent 51%);
+  background: linear-gradient(-45deg, transparent, transparent 49%, $primary-color 49%, transparent 51%);
 }
 
 .tiny-line {
@@ -120,7 +122,7 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  color:white;
+  color:$primary-color;
   text-align: center;
 }
 
@@ -152,7 +154,7 @@
 }
 
 .arrow {
-  border: solid orange;
+  border: solid $secondary-color;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -204,7 +206,7 @@
 }
 
 .dish-price {
-  color:orange;
+  color:$secondary-color;
   font-weight: bold;
 }
 
@@ -214,4 +216,7 @@
 }
 .noUi-pips-horizontal{
   display: none !important;
+}
+#range{
+  width: 200px;
 }
