@@ -1,4 +1,4 @@
-document.onload(function (){
+document.addEventListener("turbolinks:load", function () {
     console.log("test")
     var slider = document.getElementById('range');
     console.log(slider)
@@ -17,3 +17,5 @@ document.onload(function (){
     });
 
 })
+
+console.log("test")

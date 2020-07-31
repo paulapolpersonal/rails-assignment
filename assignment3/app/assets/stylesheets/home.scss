@@ -1,6 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
 $primary-color: white;
 $secondary-color: orange;
 
@@ -16,123 +18,124 @@ $secondary-color: orange;
   background-image: url("coffee_shop3.jpg");
   height: 100%;
 }
+    .container {
+      display: flex;
+      overflow: hidden;
+    }
 
-.container {
-  display:flex;
-  overflow: hidden;
-}
+  .logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 100px;
+    margin-top: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 
-.logo {
-  height:50px;
-  width:50px;
-  margin-left: 100px;
-  margin-top: 25px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
+  .logo-name {
+    color: $primary-color;
+    margin-top: 30px;
+    font-size: small;
+  }
 
-.logo-name {
-  color:$primary-color;
-  margin-top: 30px;
-  font-size: small;
-}
+  .no-bullets {
+    list-style-type: none;
+  }
 
-.no-bullets {
-  list-style-type: none;
-}
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    color: $primary-color;
+    margin-right: 100px;
+    margin-top: 40px;
+    margin-left: 50%;
+  }
 
-.menu {
-  display:flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  color:$primary-color;
-  margin-right: 100px;
-  margin-top:40px;
-  margin-left:50%;
-}
+  .list-item {
+    margin-right: 20px;
+    font-size: small;
+    font-family: Arial;
+  }
 
-.list-item {
-  margin-right:20px;
-  font-size:small;
-  font-family: Arial;
-}
+  .bullet {
+    background-color: $secondary-color;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100%;
+    height: 5px;
+    width: 5px;
+    margin-right: 25px;
+    border-radius: 50%;
+    margin-top: 5px;
+  }
 
-.bullet {
-  background-color:$secondary-color;
-  display:inline-block;
-  vertical-align: middle;
-  background-size:100%;
-  height:5px;
-  width:5px;
-  margin-right: 25px;
-  border-radius: 50%;
-  margin-top:5px;
-}
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
 
-.title {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:$primary-color;
-  margin-bottom: 10px;
-  margin-top:50px;
-}
+  .lines-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
 
-.lines-container {
-  display:flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+  .logo2 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-right: 20px;
+  }
 
-.logo2 {
-  width:30px;
-  height:30px;
-  border-radius: 50%;
-  margin-top: 30px;
-  margin-right: 20px;
-}
+  .holder {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    top: 25px;
+    margin-right: 20px;
+  }
 
-.holder {
-  position: relative;
-  width: 200px;
-  height: 50px;
-  top: 25px;
-  margin-right: 20px;
-}
-.tiny-line {
-  position: absolute;
-  height: 40px;
-  width: 1000%;
-  transform: translateX(-45%) scale(0.1);
-}
+  .tiny-line {
+    position: absolute;
+    height: 40px;
+    width: 1000%;
+    transform: translateX(-45%) scale(0.1);
+  }
 
-.tiny-line1 {
-  background: linear-gradient(45deg, transparent, transparent 49%, $primary-color 49%, transparent 51%);
-}
+  .tiny-line1 {
+    background: linear-gradient(45deg, transparent, transparent 49%, $primary-color 49%, transparent 51%);
+  }
 
-.tiny-line2 {
-  background: linear-gradient(-45deg, transparent, transparent 49%, $primary-color 49%, transparent 51%);
-}
+  .tiny-line2 {
+    background: linear-gradient(-45deg, transparent, transparent 49%, $primary-color 49%, transparent 51%);
+  }
 
-.tiny-line {
-  background-size: 80px 80px;
-}
+  .tiny-line {
+    background-size: 80px 80px;
+  }
 
-.paragraph1 {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:$primary-color;
-  text-align: center;
-}
+  .paragraph1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+    text-align: center;
+  }
 
-.paragraph2 {
-  padding-bottom:100px;
-  font-size: large;
-  margin-left: 500px;
-  margin-right: 500px;
-  text-align: center;
-}
+  .paragraph2 {
+    padding-bottom: 100px;
+    font-size: large;
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: center;
+  }
+
 
 .nav {
   background-color: gainsboro;
@@ -214,9 +217,6 @@ $secondary-color: orange;
   margin-top: 20px;
   margin-right: 10px;
 }
-.noUi-pips-horizontal{
+.noUi-pips-horizontal {
   display: none !important;
-}
-#range{
-  width: 200px;
 }
