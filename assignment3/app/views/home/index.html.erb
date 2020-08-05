@@ -1,0 +1,37 @@
+<header class="top">
+  <div class="container">
+    <%= image_tag "logo.png", class:"logo" %>
+    <p class="logo-name">EUREKA CAFFE</p>
+    <ul class="no-bullets">
+      <li> HOME</li>
+      <span class='bullet'></span>
+      <li> ABOUT</li>
+      <span class='bullet'></span>
+      <li> SERVICE</li>
+      <span class='bullet'></span>
+      <li> BLOG</li>
+      <span class='bullet'></span>
+      <li> CONTACTS</li>
+    </ul>
+  </div>
+  <h1 class="title"> Ordering Food </h1>
+  <div class="lines-container">
+    <div class="holder">
+      <div class="tiny-line tiny-line1"></div>
+      <div class="tiny-line tiny-line2"></div>
+    </div>
+    <%= image_tag "cutlery.jpg", class:"logo2" %>
+    <div class="holder">
+      <div class="tiny-line tiny-line1"></div>
+      <div class="tiny-line tiny-line2"></div>
+    </div>
+  </div>
+  <div class="paragraph1">
+    <p class="paragraph2">Maecenas vells at magna sagittis venenatis. Integer pretium auctor magna, egestas justo gravida vitae. In lacinia auctor auctor.
+    </p>
+  </div>
+</header>
+<div>
+  <%= render "home/navbar" %>
+  <%= render "home/content"%>
+</div>
