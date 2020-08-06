@@ -17,14 +17,14 @@ $font: Arial;
   background-image: asset_url("coffee_shop3.jpg");
   height: 100%;
 
-  .container {
+  .dish-container {
     display: flex;
-    overflow: hidden;
+    width: 100%;
 
     .logo {
       height: 50px;
       width: 50px;
-      margin-left: 100px;
+      margin-left: 200px;
       margin-top: 25px;
       border-radius: 50%;
       margin-right: 10px;
@@ -47,7 +47,7 @@ $font: Arial;
       color: $primary-color;
       margin-right: 100px;
       margin-top: 40px;
-      margin-left: 50%;
+      margin-left: 45%;
 
       li {
         margin-right: 20px;
@@ -61,8 +61,8 @@ $font: Arial;
       display: inline-block;
       vertical-align: middle;
       background-size: 100%;
-      height: 5px;
-      width: 5px;
+      height: 6px;
+      width: 7px;
       margin-right: 25px;
       border-radius: 50%;
       margin-top: 5px;

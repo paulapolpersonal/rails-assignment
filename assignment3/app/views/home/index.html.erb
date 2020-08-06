@@ -1,5 +1,5 @@
 <header class="top">
-  <div class="container">
+  <div class="dish-container">
     <%= image_tag "logo.png", class:"logo" %>
     <p class="logo-name">EUREKA CAFFE</p>
     <ul class="no-bullets">
@@ -12,6 +12,7 @@
       <li> BLOG</li>
       <span class='bullet'></span>
       <li> CONTACTS</li>
+      <li> <%= link_to "Sign up", signup_path %> </li>
     </ul>
   </div>
   <h1 class="title"> Ordering Food </h1>
