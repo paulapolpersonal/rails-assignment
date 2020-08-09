@@ -62,7 +62,7 @@ $font: Arial;
       vertical-align: middle;
       background-size: 100%;
       height: 6px;
-      width: 7px;
+      width: 6px;
       margin-right: 25px;
       border-radius: 50%;
       margin-top: 5px;
@@ -138,14 +138,15 @@ $font: Arial;
 
 .nav {
   background-color: gainsboro;
+  display: flex;
 
   .navigation-list {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    padding-top: 10px;
+    margin-top: 15px;
     margin-left: 100px;
-    margin-right: 300px;
+    margin-right: 30%;
 
     .navigation-item {
       margin-right: 50px;
@@ -207,8 +208,8 @@ $font: Arial;
 }
 
 .paragraph3 {
-  margin-top: 20px;
-  margin-right: 10px;
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .noUi-pips-horizontal {
@@ -216,5 +217,5 @@ $font: Arial;
 }
 
 ul.navigation-list a:hover {
-  color: blueviolet !important;
+  color: orange !important;
 }

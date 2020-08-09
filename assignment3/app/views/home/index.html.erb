@@ -3,7 +3,7 @@
     <%= image_tag "logo.png", class:"logo" %>
     <p class="logo-name">EUREKA CAFFE</p>
     <ul class="no-bullets">
-      <li> HOME</li>
+      <li><a href="/", style="color:white">HOME</a> </li>
       <span class='bullet'></span>
       <li> ABOUT</li>
       <span class='bullet'></span>
@@ -13,9 +13,9 @@
       <span class='bullet'></span>
       <li> CONTACTS</li>
       <% if logged_in? %>
-        <li> <%= link_to "Log out", logout_path, method: :delete %> </li>
+        <li> <%= link_to "Log out", logout_path, method: :delete, class:"btn btn-primary", style:"background-color:orange; border-color:orange; display:inline" %> </li>
       <% else %>
-        <li> <%= link_to "Log in or sign up", login_path %> </li>
+        <li> <%= link_to "Log in or sign up", login_path, class:"btn btn-primary", style:"background-color:orange; border-color:orange; display:inline" %> </li>
       <% end %>
     </ul>
   </div>

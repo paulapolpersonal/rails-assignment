@@ -1,3 +1,19 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.panel-title {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  color: black;
+}
+
+.panel-info > .panel-heading {
+  background-color: orange;
+  border-color: orange;
+}
+
+.panel-info {
+  border-color: orange;
+}

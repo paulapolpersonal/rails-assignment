@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       if @user.save
         reset_session
         log_in @user
-        flash[:success] = "Welcome!"
+        flash[:success] = "Welcome! Log in with the new user!"
         redirect_to '/login'
       else
         render 'new'
