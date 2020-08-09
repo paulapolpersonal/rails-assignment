@@ -1,5 +1,4 @@
 document.addEventListener("turbolinks:load", function () {
-    console.log("test")
     var slider = document.getElementById('range');
     console.log(slider)
     var slider2 = noUiSlider.create(slider, {
@@ -15,5 +14,4 @@ document.addEventListener("turbolinks:load", function () {
             density: 5,
         }
     });
-
 })

@@ -12,7 +12,11 @@
       <li> BLOG</li>
       <span class='bullet'></span>
       <li> CONTACTS</li>
-      <li> <%= link_to "Sign up", signup_path %> </li>
+      <% if logged_in? %>
+        <li> <%= link_to "Log out", logout_path, method: :delete %> </li>
+      <% else %>
+        <li> <%= link_to "Log in or sign up", login_path %> </li>
+      <% end %>
     </ul>
   </div>
   <h1 class="title"> Ordering Food </h1>
@@ -34,5 +38,5 @@
 </header>
 <div>
   <%= render "home/navbar" %>
-  <%= render "home/content"%>
+  <%= render "products/product_form"%>
 </div>

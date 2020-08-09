@@ -47,7 +47,7 @@ $font: Arial;
       color: $primary-color;
       margin-right: 100px;
       margin-top: 40px;
-      margin-left: 45%;
+      margin-left: 38%;
 
       li {
         margin-right: 20px;
@@ -144,8 +144,8 @@ $font: Arial;
     justify-content: flex-start;
     flex-direction: row;
     padding-top: 10px;
-    margin-left: 250px;
-    margin-right: 400px;
+    margin-left: 100px;
+    margin-right: 300px;
 
     .navigation-item {
       margin-right: 50px;
@@ -213,4 +213,8 @@ $font: Arial;
 
 .noUi-pips-horizontal {
   display: none !important;
+}
+
+ul.navigation-list a:hover {
+  color: blueviolet !important;
 }

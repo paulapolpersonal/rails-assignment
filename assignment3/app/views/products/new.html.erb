@@ -1,0 +1,17 @@
+<% provide(:title, 'Add product') %>
+<h1>Add product</h1>
+
+<div>
+  <div>
+    <%= form_with(model: @product, local: true) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control'%>
+      <%= f.label :description %>
+      <%= f.text_field :description, class:'form-control'%>
+      <%= f.label :price %>
+      <%= f.text_field :price,  class:'form-control'%>
+      <%= f.file_field :image %>
+      <%= f.submit "Create my dish", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
