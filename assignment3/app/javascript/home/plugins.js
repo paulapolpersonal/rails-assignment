@@ -1,6 +1,6 @@
 document.addEventListener("turbolinks:load", function () {
     var slider = document.getElementById('range');
-    console.log(slider)
+    slider.innerHTML=""
     var slider2 = noUiSlider.create(slider, {
         start: [5, 20],
         connect: true,
