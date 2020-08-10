@@ -9,17 +9,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if @user.save
-        reset_session
-        log_in @user
-        flash[:success] = "Welcome! Log in with the new user!"
-        redirect_to '/login'
-      else
-        render 'new'
-      end
+    if @user.save
+      reset_session
+      log_in @user
+      flash[:success] = "Welcome! Log in with the new user!"
+      redirect_to '/login'
+    else
+      render 'new'
+    end
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
