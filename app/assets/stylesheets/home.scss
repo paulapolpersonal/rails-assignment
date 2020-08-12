@@ -220,3 +220,11 @@ $font: Arial;
 ul.navigation-list a:hover {
   color: orange !important;
 }
+
+.btn-custom {
+  background-color: orange;
+  border-color: orange;
+  display: inline;
+  margin-left: 10px !important;
+  color:white;
+}

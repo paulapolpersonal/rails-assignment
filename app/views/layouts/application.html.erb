@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Restaurant</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'nouislider.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <div>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %>
-        </div>
-      <% end %>
-      <%= yield %>
+<head>
+  <title>Restaurant</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'nouislider.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<div>
+  <header class="top">
+    <div class="dish-container">
+      <%= image_tag "logo.png", class: "logo" %>
+      <p class="logo-name">EUREKA CAFFE</p>
+      <ul class="no-bullets">
+        <li><a href="/" , style="color:white">HOME</a></li>
+        <span class='bullet'></span>
+        <li> ABOUT</li>
+        <span class='bullet'></span>
+        <li> SERVICE</li>
+        <span class='bullet'></span>
+        <li> BLOG</li>
+        <span class='bullet'></span>
+        <li> CONTACTS</li>
+        <% if logged_in? %>
+          <li> <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-custom" %> </li>
+          <li> <%= link_to "Edit profile", edit_user_path(current_user) %></li>
+        <% else %>
+          <li> <%= link_to "Log in or sign up", login_path, class: "btn btn-custom" %> </li>
+        <% end %>
+      </ul>
     </div>
-  </body>
+    <%= render 'layouts/info' if params[:action] == "index" && params[:controller]== 'products' %>
+
+  </header>
+  <%= yield %>
+</div>
+</body>
 </html>
