@@ -22,3 +22,19 @@
   border-color:orange;
   margin-left:28%
 }
+
+.btn-custom-update {
+  background-color:orange;
+  border-color:orange;
+  margin-left:30%
+}
+
+.users-page {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+  }
+}
