@@ -3,3 +3,6 @@ paula:
   name: paula pol
   email: polpaula6@gmail.com
   password_digest: <%= User.digest('password')%>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>

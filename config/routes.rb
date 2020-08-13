@@ -10,4 +10,5 @@ Rails.application.routes.draw do
    resources :users
    get '/addproduct', to: 'products#new'
    resources :products
+   resources :account_activations, only: [:edit]
 end
