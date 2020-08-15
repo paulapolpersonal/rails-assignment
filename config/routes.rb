@@ -11,4 +11,8 @@ Rails.application.routes.draw do
    get '/addproduct', to: 'products#new'
    resources :products
    resources :account_activations, only: [:edit]
+   get '/cart', to: 'carts#show'
+   post 'order_items/:id', to: 'order_items#create'
+   resources :carts
+   resources :order_items
 end

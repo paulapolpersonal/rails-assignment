@@ -6,6 +6,7 @@
         <h4><b><%= product.name %></b></h4>
         <p><%= product.description %></p>
         <p class="dish-price">$ <%= product.price %></p>
+        <%= link_to "Add to cart", "/order_items/#{product.id}",method: 'post' %>
       </div>
     </div>
   <%end %>
