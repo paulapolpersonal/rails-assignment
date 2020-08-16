@@ -1,11 +1,10 @@
 class OrderItemsController < ApplicationController
-
   def create
     @cart = current_user.cart
-    @product =  Product.find(params[:id])
-    @order_item = OrderItem.new(cart: @cart,product: @product)
-    @order_item.quantity = 0
-    if OrderItem.find_by(cart: @cart, product: @product) == nil
+    @product = Product.find(params[:id])
+    @order_item = OrderItem.find_by(cart: @cart, product: @product)
+    if @order_item.nil?
+      @order_item = OrderItem.new(cart: @cart, product: @product, quantity: 1)
       if @order_item.save
         flash[:success] = "Item added to cart"
       else
@@ -17,11 +16,18 @@ class OrderItemsController < ApplicationController
     redirect_to cart_url
   end
 
+  def update
+    @cart = current_user.cart
+    @product = Product.find(params[:id])
+    @order_item = OrderItem.find_by(cart: @cart, product: @product)
+    @quantity = params[:quantity]
+    @order_item.update(:quantity => @quantity)
+  end
+
   def destroy
     OrderItem.find(params[:id]).destroy
     flash[:success] = "Item deleted"
   end
-
 
   private
 

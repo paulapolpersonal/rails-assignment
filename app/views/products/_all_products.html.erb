@@ -1,13 +1,18 @@
-<footer id="container2" >
+<footer id="container2">
   <% Product.all.each do |product| %>
     <div class="card">
-      <%= image_tag product.image, class:"dish-image" if product.image.attached? %>
+      <%= image_tag product.image, class: "dish-image" if product.image.attached? %>
       <div class="card-details-container">
         <h4><b><%= product.name %></b></h4>
         <p><%= product.description %></p>
         <p class="dish-price">$ <%= product.price %></p>
-        <%= link_to "Add to cart", "/order_items/#{product.id}",method: 'post' %>
+        <% if logged_in? %>
+          <%= link_to "Add to cart", "/order_items/#{product.id}", method: 'post' %>
+        <% else %>
+          <%= link_to "Add to cart", login_url%>
+        <% end %>
       </div>
     </div>
-  <%end %>
+  <% end %>
 </footer>
+

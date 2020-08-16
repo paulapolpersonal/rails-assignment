@@ -2,7 +2,7 @@
      class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2 login">
   <div class="panel panel-info">
     <div class="panel-heading">
-      <div class="panel-title">Add product</div>
+      <div class="panel-title">Edit product</div>
     </div>
     <div style="padding-top: 30px" class="panel-body">
       <%= form_with(model: @product, local: true) do |f| %>
@@ -22,7 +22,7 @@
           <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
           <%= f.file_field :image, placeholder: "Image", class: "form-control" %>
         </div>
-        <%= f.submit "Add dish", class: "btn edit-button" %>
+        <%= f.submit "Update dish", class: "btn edit-button" %>
       <% end %>
     </div>
   </div>

@@ -30,10 +30,31 @@
         <span class='bullet'></span>
         <li> CONTACTS</li>
         <% if logged_in? %>
-          <li> <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-custom" %> </li>
-          <li> <%= link_to "Edit profile", edit_user_path(current_user) %></li>
-          <% if current_user.try(:admin?) && !current_user?(@user)%>
-            <li><%= link_to "Users", users_path %></li>
+          <li class="navigation-item dropdown active no-bullets" style="list-style-type: none;">
+            <a class="nav-link btn btn-custom" href="#" id="navbarDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Profile
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+          <% if current_user.try(:admin?) && !current_user?(@user) %>
+            <li class="navigation-item dropdown active no-bullets" style="list-style-type: none;">
+              <a class="nav-link btn btn-custom" href="#" id="navbarDropdown" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "All Users", users_path, class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "All Orders", class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "All Products", '/adminproducts', class: "dropdown-item" %>
+              </div>
+            </li>
           <% end %>
         <% else %>
           <li> <%= link_to "Log in or sign up", login_path, class: "btn btn-custom" %> </li>

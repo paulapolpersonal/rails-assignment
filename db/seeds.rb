@@ -16,7 +16,7 @@ new_product = Product.find_or_create_by!(name: 'Pizza', description: 'Main Cours
 new_product.image.attach(io: File.open(file_path), filename: 'logo.png')
 new_product = Product.find_or_create_by!(name: 'Pancakes', description: 'Dessert', price: 7)
 new_product.image.attach(io: File.open(file_path), filename: 'logo.png')
-User.create!(name:"Paula Pol", email: "polpaula6+2@gmail.com", password: "administrator", password_confirmation:'administrator', admin: true, activated: true,
-            activated_at: Time.zone.now)
-User.create!(name:"Ana Pop", email: "anapop+2@gmail.com", password:'mamaliga',  password_confirmation:'mamaliga', admin: false, activated: true,
-            activated_at: Time.zone.now)
+User.create!(name: "Paula Pol", email: "polpaula6@gmail.com", password: "administrator", password_confirmation: 'administrator', admin: true, activated: true,
+             activated_at: Time.zone.now)
+User.create!(name: "Ana Pop", email: "anapop@gmail.com", password: 'mamaliga', password_confirmation: 'mamaliga', admin: false, activated: true,
+             activated_at: Time.zone.now)
