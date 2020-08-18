@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class="custom-title">Products Directory</h3>
   <hr>
-  <a href="/addproduct" class="btn custom-button2">Add Product</a>
+  <%= link_to "Add Product", new_admin_product_path, class: "btn custom-button2" %>
   <table class="table table-bordered table-striped">
     <thead class="thead-dark">
     <tr>
@@ -20,8 +20,8 @@
       <td> <%= product.description %> </td>
       <td> $ <%= product.price %> </td>
       <td>
-        <%= link_to "Update Item", edit_product_path(product), class: "btn btn-info btn-sm" %>
-        <%= link_to "Remove Item", product, method: :delete, class: "btn btn-danger btn-sm" %>
+        <%= link_to "Update Item", edit_admin_product_path(product), class: "btn btn-info btn-sm" %>
+        <%= link_to "Delete Item", admin_product_path(product) , method: :delete, class: "btn btn-danger btn-sm" %>
       </td>
     </tr>
       <% end %>

@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
   def create
-    @cart = current_user.cart
+    @cart = Cart.find_or_create_by!(user_id: current_user.id)
     @product = Product.find(params[:id])
     @order_item = OrderItem.find_by(cart: @cart, product: @product)
     if @order_item.nil?
@@ -17,16 +17,16 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    @cart = current_user.cart
-    @product = Product.find(params[:id])
-    @order_item = OrderItem.find_by(cart: @cart, product: @product)
+    @order_item = OrderItem.find(params[:id])
     @quantity = params[:quantity]
-    @order_item.update(:quantity => @quantity)
+    @order_item.update(quantity: @quantity)
+    redirect_to cart_url
   end
 
   def destroy
     OrderItem.find(params[:id]).destroy
     flash[:success] = "Item deleted"
+    redirect_to '/cart'
   end
 
   private

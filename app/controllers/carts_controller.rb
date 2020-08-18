@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.order_items.delete_all
-    redirect_to @cart
+    current_user.cart.order_items.destroy_all
+    redirect_to cart_url
   end
 end
