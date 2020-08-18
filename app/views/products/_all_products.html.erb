@@ -7,12 +7,11 @@
         <p><%= product.description %></p>
         <p class="dish-price">$ <%= product.price %></p>
         <% if logged_in? %>
-          <%= link_to "Add to cart", "/order_items/#{product.id}", method: 'post', class:"btn add-to-cart" %>
+          <%= link_to "Add to cart", "/order_items/#{product.id}", method: 'post', class: "btn add-to-cart" %>
         <% else %>
-          <%= link_to "Add to cart", login_url, class:"btn add-to-cart"%>
+          <%= link_to "Add to cart", login_url, class: "btn add-to-cart" %>
         <% end %>
       </div>
     </div>
   <% end %>
 </footer>
-
