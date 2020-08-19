@@ -1,8 +1,11 @@
 <footer id="container2">
   <% Product.all.each do |product| %>
     <div class="card">
-      <%#= image_tag product.image,direct_upload: true, class: "dish-image" if product.image.attached? %>
-      <%= cl_image_tag(product.image.key, class: "dish-image") %>
+      <% if Rails.env.production? %>
+        <%= cl_image_tag(product.image.key, class: "dish-image") %>
+      <% else %>
+        <%= image_tag product.image, direct_upload: true, class: "dish-image" if product.image.attached? %>
+      <% end %>
       <div class="card-details-container">
         <h4><b><%= product.name %></b></h4>
         <p><%= product.description %></p>

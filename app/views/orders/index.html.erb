@@ -8,6 +8,7 @@
       <th>Address</th>
       <th>Phone number</th>
       <th>Date</th>
+      <th>Items</th>
       <th>Status</th>
     </tr>
     </thead>
@@ -18,6 +19,11 @@
       <td> <%= order.address %> </td>
       <td> <%= order.phone_number %> </td>
       <td> <%= order.created_at%> </td>
+      <td> <%- OrderProduct.where(order_id: order.id).each do |order_product|%>
+          <%= Product.find(order_product.product_id).name%>
+          <%= order_product.quantity%>
+        <%end %>
+      </td>
       <td>
         <% if order.handled == true %>
           <p>Handled!</p>

@@ -8,7 +8,7 @@ class Admin::ProductsController < AdminController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.create(product_params)
     @product.image.attach(params[:product][:image])
     if @product.save
       redirect_to admin_products_path

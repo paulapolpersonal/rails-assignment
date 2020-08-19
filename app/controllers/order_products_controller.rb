@@ -14,6 +14,6 @@ class OrderProductsController < ApplicationController
     @order.save
     current_user.cart.order_items.destroy_all
     flash[:success]="Order placed successfully"
-    redirect_to root_url
+    redirect_to '/qrcode'
   end
 end

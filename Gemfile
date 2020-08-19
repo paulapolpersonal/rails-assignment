@@ -27,6 +27,7 @@ gem 'will_paginate', '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'cloudinary'
+gem 'rqrcode'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
