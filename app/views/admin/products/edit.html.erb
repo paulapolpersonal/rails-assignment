@@ -1,0 +1,29 @@
+<div id="loginbox"
+     class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2 login">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title">Edit product</div>
+    </div>
+    <div style="padding-top: 30px" class="panel-body">
+      <%= form_for [:admin, @product],local: true do |f| %>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+          <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+          <%= f.text_field :description, placeholder: "Description", class: "form-control" %>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></span>
+          <%= f.text_field :price, placeholder: "Price", class: "form-control" %>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+          <%= f.file_field :image, placeholder: "Image", class: "form-control" %>
+        </div>
+        <%= f.submit "Update dish", class: "btn edit-button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <h3 class="custom-title">Your orders</h3>
+  <hr>
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th>Customer name</th>
+      <th>Address</th>
+      <th>Phone number</th>
+      <th>Date</th>
+      <th>Items</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      <% current_user.orders.each do |order| %>>
+      <td> <%= order.user.name %> </td>
+      <td> <%= order.address %> </td>
+      <td> <%= order.phone_number %> </td>
+      <td> <%= order.created_at%> </td>
+      <td> <%- OrderProduct.where(order_id: order.id).each do |order_product|%>
+          <%= Product.find(order_product.product_id).name%>
+          <%= order_product.quantity%>
+        <%end %>
+      </td>
+      <td>
+        <% if order.handled == true %>
+          <p>Handled!</p>
+        <% else %>
+          <p>Still processing!</p>
+        <% end %>
+      </td>
+    </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

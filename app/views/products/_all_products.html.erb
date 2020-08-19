@@ -1,0 +1,21 @@
+<footer id="container2">
+  <% Product.all.each do |product| %>
+    <div class="card">
+      <% if Rails.env.production? %>
+        <%= cl_image_tag(product.image.key, class: "dish-image") %>
+      <% else %>
+        <%= image_tag product.image, direct_upload: true, class: "dish-image" if product.image.attached? %>
+      <% end %>
+      <div class="card-details-container">
+        <h4><b><%= product.name %></b></h4>
+        <p><%= product.description %></p>
+        <p class="dish-price">$ <%= product.price %></p>
+        <% if logged_in? %>
+          <%= link_to "Add to cart", "/order_items/#{product.id}", method: 'post', class: "btn add-to-cart" %>
+        <% else %>
+          <%= link_to "Add to cart", login_url, class: "btn add-to-cart" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</footer>

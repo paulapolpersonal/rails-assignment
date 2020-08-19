@@ -1,0 +1,30 @@
+<div class="container">
+  <h3 class="custom-title">Products Directory</h3>
+  <hr>
+  <%= link_to "Add Product", new_admin_product_path, class: "btn custom-button2" %>
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+    <% Product.all.each do |product| %>>
+      <td> <%= image_tag product.image, class: "img" if product.image.attached? %> </td>
+      <td> <%= product.name %> </td>
+      <td> <%= product.description %> </td>
+      <td> $ <%= product.price %> </td>
+      <td>
+        <%= link_to "Update Item", edit_admin_product_path(product), class: "btn btn-info btn-sm" %>
+        <%= link_to "Delete Item", admin_product_path(product) , method: :delete, class: "btn btn-danger btn-sm" %>
+      </td>
+    </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

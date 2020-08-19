@@ -1,0 +1,24 @@
+// Place all the styles related to the Order_Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.custom-table {
+  width: 200px;
+  text-align: center;
+}
+
+.custom-title {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  background-color:orange;
+  border-color:orange;
+  margin-left:44%;
+  color: white;
+}
+
+.custom {
+  text-align: center;
+}

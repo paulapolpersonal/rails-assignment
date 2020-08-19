@@ -1,0 +1,52 @@
+<% if @order_items.count.zero? %>
+  <div>
+    <%= image_tag 'cart.png', style: "margin-left:23%" %>
+  </div>
+<% else %>
+  <% total = 0 %>
+  <div class="container">
+    <h3 class="custom-title">Your Order</h3>
+    <hr>
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th class="custom-table">Item</th>
+        <th class="custom-table">Price</th>
+        <th class="custom-table">Quantity</th>
+        <th class="custom-table"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        <% @order_items.each do |item| %>>
+        <td class="custom"><%= item.product.name %></td>
+        <td class="custom">$<%= item.product.price * item.quantity %></td>
+        <td class="custom"><%= form_with(url: order_item_path(item), method: :patch, local: true) do |f| %>
+            <%= f.number_field :quantity, :value => item.quantity.to_i, style: "width: 50px" %>
+            <%= f.submit "Update quantity", class: "btn btn-info btn-sm" %>
+          <% end %>
+        </td>
+        <td class="custom">
+          <%= link_to "Remove Item", item, method: :delete, class: "btn btn-danger btn-sm" %>
+        </td>
+      </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="custom">Total:$</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="custom">
+            <%= link_to "Empty Cart", cart_destroy_path(current_user.cart), method: :delete %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to "Go to the next step", details_path, class: "btn custom-button" %>
+  </div>
+<% end %>

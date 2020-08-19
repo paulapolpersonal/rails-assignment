@@ -14,7 +14,7 @@ $font: Arial;
   background-color: $secondary-color;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: asset_url("coffee_shop3.jpg");
+  background-image: asset_url("coffee_shop.jpg");
   height: 100%;
 
   .dish-container {
@@ -25,7 +25,7 @@ $font: Arial;
       height: 50px;
       width: 50px;
       margin-left: 200px;
-      margin-top: 25px;
+      margin-top: 23px;
       border-radius: 50%;
       margin-right: 10px;
     }
@@ -219,4 +219,16 @@ $font: Arial;
 
 ul.navigation-list a:hover {
   color: orange !important;
+}
+
+.btn-custom {
+  background-color: orange;
+  border-color: orange;
+  display: inline;
+  margin-left: 10px !important;
+  color:white;
+}
+
+.dropdown-menu {
+  min-width: 80px;
 }
