@@ -20,7 +20,7 @@
         </div>
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-          <%= f.file_field :image, placeholder: "Image", class: "form-control" %>
+          <%= f.file_field :image, placeholder: "Image", direct_upload: true, class: "form-control" %>
         </div>
         <%= f.submit "Add dish", class: "btn edit-button" %>
       <% end %>

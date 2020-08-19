@@ -1,6 +1,7 @@
 development:
   service: Disk
   root: <%= Rails.root.join("storage") %>
+
 production:
   cloud_name: <%= ENV["CLOUD_NAME"] %>
   api_key: <%= ENV["API_KEY"] %>
