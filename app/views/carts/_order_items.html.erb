@@ -41,11 +41,12 @@
           <td></td>
           <td></td>
           <td></td>
-          <td class="custom"><%= link_to "Place Order" %>
+          <td class="custom">
+            <%= link_to "Empty Cart", cart_destroy_path(current_user.cart), method: :delete %>
           </td>
         </tr>
       </tbody>
     </table>
-    <%= link_to "Empty Cart", cart_destroy_path(current_user.cart), method: :delete, class: "btn custom-button" %>
+    <%= link_to "Go to the next step", details_path, class: "btn custom-button" %>
   </div>
 <% end %>

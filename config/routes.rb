@@ -22,11 +22,17 @@ Rails.application.routes.draw do
   end
   resources :order_items, only: [:create, :update, :destroy]
 
+  get '/details', to: 'orders#new'
+  post '/details', to: 'order_products#create'
+  resources :order_products
+  resources :orders
+
   namespace :admin do
     get '/products/new', to: 'products#new'
     get '/products/:id', to: 'products#index'
     get '/products/edit', to: 'products#edit'
-    resources :products, only: [:destroy, :index, :create, :new, :edit, :update]
+    resources :products
     resources :users, only: [:destroy, :index]
+    resources :orders
   end
 end
