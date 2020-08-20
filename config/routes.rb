@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   get '/details', to: 'orders#new'
   post '/details', to: 'order_products#create'
+  get 'code', to: 'orders#show'
   resources :order_products
   resources :orders
 

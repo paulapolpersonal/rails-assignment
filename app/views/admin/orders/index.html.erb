@@ -28,7 +28,7 @@
         <% if order.handled == true %>
           <p>Confirmed</p>
         <% else %>
-          <%= link_to "Handle", handle(order) %>
+          <%= link_to "Handle", admin_order_path(order), method: :patch %>
         <% end %>
       </td>
     </tr>

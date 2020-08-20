@@ -3,7 +3,6 @@
     <%= image_tag 'cart.png', style: "margin-left:23%" %>
   </div>
 <% else %>
-  <% total = 0 %>
   <div class="container">
     <h3 class="custom-title">Your Order</h3>
     <hr>
@@ -35,7 +34,13 @@
           <td></td>
           <td></td>
           <td></td>
-          <td class="custom">Total:$</td>
+          <td class="custom">Total:$
+            <% total = 0
+               @order_items.each do |item|
+                 total += item.product.price * item.quantity
+               end %>
+            <%= total %>
+          </td>
         </tr>
         <tr>
           <td></td>

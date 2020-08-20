@@ -1,6 +1,10 @@
 class OrderProductsController < ApplicationController
+  def index
+    @order = Order.find(params[:order])
+  end
+
   def new
-    @order=Order.new
+    @order = Order.new
   end
 
   def create
@@ -14,6 +18,6 @@ class OrderProductsController < ApplicationController
     @order.save
     current_user.cart.order_items.destroy_all
     flash[:success]="Order placed successfully"
-    redirect_to '/qrcode'
+    redirect_to @order
   end
 end
