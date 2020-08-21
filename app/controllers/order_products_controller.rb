@@ -1,5 +1,6 @@
 class OrderProductsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, only: [:index, :new]
+
   def index
     @order = Order.find(params[:order])
   end
