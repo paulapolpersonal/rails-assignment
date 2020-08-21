@@ -1,4 +1,5 @@
 class OrderProductsController < ApplicationController
+  before_action :logged_in_user
   def index
     @order = Order.find(params[:order])
   end
