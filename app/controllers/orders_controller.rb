@@ -6,6 +6,6 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.order.order_products
+    @order = Order.find(params[:id])
   end
 end

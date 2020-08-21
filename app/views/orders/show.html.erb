@@ -1,0 +1,2 @@
+<%= image_tag generate_qr(request.base_url + order_products_path(order: @order)), class: "qr-code", style:"margin-left:40%" %>
+<p class="scan-order">Scan this code to go to your order!</p>

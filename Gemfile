@@ -28,6 +28,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'cloudinary'
 gem 'rqrcode'
+gem 'barby', '~> 0.6.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
