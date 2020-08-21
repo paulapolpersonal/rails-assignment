@@ -7,16 +7,16 @@
     <div style="padding-top: 30px" class="panel-body">
       <%= form_with(model: @order, url: "/details", local: true) do |f| %>
         <div style="margin-bottom: 25px" class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
           <%= f.text_field :address, placeholder: "Address", class: "form-control" %>
         </div>
         <div style="margin-bottom: 25px" class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
           <%= f.text_field :phone_number, placeholder: "Phone Number", class: "form-control" %>
         </div>
         <%= f.submit "Place Order", class: "btn edit-button" %>
       <% end %>
-      <p>*For the moment the payment can be done only with cash*</p>
+      <p class="payment-text">*For the moment the payment can be done only with cash*</p>
     </div>
   </div>
 </div>

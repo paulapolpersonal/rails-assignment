@@ -18,9 +18,13 @@ class OrderProductsController < ApplicationController
     @cart.order_items.each do |order_item|
       @order.order_products << OrderProduct.new(product: order_item.product, quantity: order_item.quantity)
     end
-    @order.save
-    current_user.cart.order_items.destroy_all
-    flash[:success]="Order placed successfully"
-    redirect_to @order
+    if @order.save
+      current_user.cart.order_items.destroy_all
+      flash[:success] = "Order placed successfully"
+      redirect_to @order
+    else
+      flash[:danger] = 'Something went wrong'
+      redirect_to root_url
+    end
   end
 end
