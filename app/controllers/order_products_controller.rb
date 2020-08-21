@@ -2,6 +2,7 @@ class OrderProductsController < ApplicationController
   before_action :logged_in_user, only: [:index, :new]
 
   def index
+    @var = false
     @order = Order.find(params[:order])
   end
 

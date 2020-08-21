@@ -15,57 +15,61 @@
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 <div>
-  <header class="top">
-    <div class="dish-container">
-      <%= image_tag "logo.png", class: "logo" %>
-      <p class="logo-name">EUREKA CAFFE</p>
-      <ul class="no-bullets">
-        <li><a href="/" , style="color:white">HOME</a></li>
-        <span class='bullet'></span>
-        <li> ABOUT</li>
-        <span class='bullet'></span>
-        <li> SERVICE</li>
-        <span class='bullet'></span>
-        <li> BLOG</li>
-        <span class='bullet'></span>
-        <li> CONTACTS</li>
-        <% if logged_in? %>
-          <li class="navigation-item dropdown active no-bullets" style="list-style-type: none;">
-            <a class="nav-link btn btn-custom" href="#" id="navbarDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Profile
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Go to cart", cart_path, class: "dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "See your orders", orders_path, class: "dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-          <% if current_user.try(:admin?) %>
+  <% if @var == false %>
+    <%= %>
+  <% else %>
+    <header class="top">
+      <div class="dish-container">
+        <%= image_tag "logo.png", class: "logo" %>
+        <p class="logo-name">EUREKA CAFFE</p>
+        <ul class="no-bullets">
+          <li><a href="/" , style="color:white">HOME</a></li>
+          <span class='bullet'></span>
+          <li> ABOUT</li>
+          <span class='bullet'></span>
+          <li> SERVICE</li>
+          <span class='bullet'></span>
+          <li> BLOG</li>
+          <span class='bullet'></span>
+          <li> CONTACTS</li>
+          <% if logged_in? %>
             <li class="navigation-item dropdown active no-bullets" style="list-style-type: none;">
               <a class="nav-link btn btn-custom" href="#" id="navbarDropdown" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Admin
+                Profile
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "All Users", admin_users_path, class: "dropdown-item" %>
+                <%= link_to "Go to cart", cart_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to "All Orders", admin_orders_path, class: "dropdown-item" %>
+                <%= link_to "See your orders", orders_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to "All Products", admin_products_path, class: "dropdown-item" %>
+                <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>
+            <% if current_user.try(:admin?) %>
+              <li class="navigation-item dropdown active no-bullets" style="list-style-type: none;">
+                <a class="nav-link btn btn-custom" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to "All Users", admin_users_path, class: "dropdown-item" %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "All Orders", admin_orders_path, class: "dropdown-item" %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "All Products", admin_products_path, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% end %>
+          <% else %>
+            <li> <%= link_to "Log in or sign up", login_path, class: "btn btn-custom" %> </li>
           <% end %>
-        <% else %>
-          <li> <%= link_to "Log in or sign up", login_path, class: "btn btn-custom" %> </li>
-        <% end %>
-      </ul>
-    </div>
-    <%= render 'layouts/info' if params[:action] == "index" && params[:controller] == 'products' %>
+        </ul>
+      </div>
+  <% end %>
+  <%= render 'layouts/info' if params[:action] == "index" && params[:controller] == 'products' %>
 
   </header>
   <%= yield %>
