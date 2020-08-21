@@ -15,7 +15,7 @@
     <tr>
       <td> <%= @order.user.name %> </td>
       <td> <%= @order.address %> </td>
-      <td> <%= @order.id %> </td>
+      <td> <%= @order.phone_number %> </td>
       <td>
         <%- OrderProduct.where(order_id: @order.id).each do |order_product| %>
           <%= Product.find(order_product.product_id).name %>
